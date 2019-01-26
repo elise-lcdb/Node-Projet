@@ -12,3 +12,9 @@ mongoose.connect(dbConfig.url,{ useNewUrlParser: true }, (err) => {
         console.log('database connected');
     }
 });
+
+const port = serverConfig.port;
+
+app.listen(port, () => {
+    console.log(`server on port ${port}`);
+});
