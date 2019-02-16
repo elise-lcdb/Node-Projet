@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Node JS</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+	<div class="section">
+		<div class="container">
+		<form action="/api/v1/products/productcreated" method="post">
+  		Product ID:<br>
+  		<input class="input is-primary" type="number" name="productid">
+  		<br>
+  		Product Name:<br>
+		 <input class="input is-primary" type="text" name="productname" >
+		 <br>
+		 Product Description:<br>
+		 <textarea class="textarea" name="productdescription" placeholder="Product Description"></textarea>
+		 <br>
+		 Product Price:<br>
+		 <input class="input is-primary" type="number" name="productprice" step="0.01">
+		 Product TVA:<br>
+		 <input class="input is-primary" type="number" name="producttva" step="0.01">
+  		<br><br>
+  		<center>
+  		<div class="control">
+    	<button class="button is-link" type="submit">Submit</button>
+  		</div>
+  		</center>
+		</form> 
+	</div>
+	</div>
+</body>
+</html>
