@@ -13,6 +13,11 @@ mongoose.connect(dbConfig.url,{ useNewUrlParser: true }, (err) => {
     }
 });
 
+app.post(`/${serverConfig.rootUrl}/${serverConfig.version}/clients`, clientController.createClient);
+app.get(`/${serverConfig.rootUrl}/${serverConfig.version}/clients`, clientController.getClients);
+app.put(`/${serverConfig.rootUrl}/${serverConfig.version}/clients/:id`,clientController.updateClient);
+app.delete(`/${serverConfig.rootUrl}/${serverConfig.version}/clients/:id`,clientController.deleteClient);
+
 const port = serverConfig.port;
 
 app.listen(port, () => {
