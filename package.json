@@ -1,13 +1,13 @@
 {
-  "name": "njs",
+  "name": "node-projet",
   "version": "1.0.0",
-  "description": "School project",
+  "description": "Node Project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
-  "author": "Elise Lcdb",
+  "author": "Elise LCDB et Imen CHEBBI",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^1.18.9"
