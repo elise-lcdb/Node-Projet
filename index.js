@@ -29,8 +29,8 @@ app.put('/api/v1/clients/:id', ClientController.updateClient);
 app.get('/api/v1/factures', (req, res) => {
 	res.render('factures.html');
 });
-app.post('/api/v1/facturecreated', FactureController.createProduct);
-app.post('api/v1/commentaires', (req,res) => {
+app.post('/api/v1/post', FactureController.createProduct);
+app.post('/api/v1/post2', (req,res) => {
     if(req.body.clientnom){
 		fs.mkdir('notes/'+req.body.clientnom, (error) => {
 			     if(error) {
@@ -46,12 +46,26 @@ app.post('api/v1/commentaires', (req,res) => {
 				     console.log(error);
 				 }
 				 else {
-				     console.log('fichier modifié');
+				     console.log(note);
 				 }
 			 res.send(`Thank you`);
 			
 	})
 }});
+app.get('/api/v1/notes/:name/vider', (res, req) => {
+	if(req.params.name){
+		fs.writeFile('./notes/'+req.params.name+'/notes.txt', '', (error) =>{
+			if(error) {
+				console.log(error);
+			}
+			else {
+				console.log('fichier modifié');
+			}
+		}
+		
+		)
+	}
+})
 app.listen(port, () => {
 	console.log(`Server on on port ${port}`);
 })
