@@ -24,25 +24,25 @@ exports.createFacture = (req, res) => {
         }
         res.send(facture);
         //Create Folder
+        // let client = ${facture.nom_du_client};
+        // fs.mkdir('facture/'+client, (error) => {
+        //     if(error) {
+        //         console.log(error);
+        //     }
+        //     else {
+        //         console.log("dossier créé");
+        //     }
+        // });
+        // let facturetxt = `f00: ${facture.facturenb}\n, Nom_du_client: ${facture.nom_du_client}\n, date_de_creation: ${new Date().toLocaleString()}\n, Prestation_fournie: ${facture.prestation_fournie}\n, Nombre_heure: ${facture.nbre_heure}\n, Cout_horaire: ${facture.cout_horaire}\n, TVA: ${facture.tva}\n,  PrixHT: ${facture.prixHT}\n,`
 
-        fs.mkdir('facture/'+${facture.nom_du_client}, (error) => {
-            if(error) {
-                console.log(error);
-            }
-            else {
-                console.log("dossier créé");
-            }
-        });
-        let facturetxt = `f00: ${facture.facturenb}\n, Nom_du_client: ${facture.nom_du_client}\n, date_de_creation: ${new Date().toLocaleString()}\n, Prestation_fournie: ${facture.prestation_fournie}\n, Nombre_heure: ${facture.nbre_heure}\n, Cout_horaire: ${facture.cout_horaire}\n, TVA: ${facture.tva}\n,  PrixHT: ${facture.prixHT}\n,`
-
-        fs.writeFile('./facture/'+${facture.nom_du_client}+'/f00'+${facture.facturenb}+'.txt', facturetxt, (error) => {
-	    if(error) {
-		    console.log(error);
-	    }
-	    else {
-		    console.log('fichier modifié');
-	    }
-});
-    })
+        // fs.writeFile('./facture/'+${facture.nom_du_client}+'/f00'+${facture.facturenb}+'.txt', facturetxt, (error) => {
+	    // if(error) {
+		//     console.log(error);
+	    // }
+	    // else {
+		//     console.log('fichier modifié');
+	    // }
+// });
+     })
 }
 

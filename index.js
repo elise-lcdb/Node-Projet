@@ -30,6 +30,28 @@ app.get('/api/v1/factures', (req, res) => {
 	res.render('factures.html');
 });
 app.post('/api/v1/facturecreated', FactureController.createProduct);
+app.post('api/v1/commentaires', (req,res) => {
+    if(req.body.clientnom){
+		fs.mkdir('notes/'+req.body.clientnom, (error) => {
+			     if(error) {
+			         console.log(error);
+			     }
+			     else {
+			         console.log("dossier créé");
+			     }
+			 });
+			 let note = 'Client: '+ req.body.clientnom +'\n'+'Commentaire 1:'+req.body.clientnote+'\n'+'Commentaire 2:'+req.body.client2note;
+			 fs.writeFile('./notes/'+req.body.clientnom+'/notes.txt', note, (error) => {
+				 if(error) {
+				     console.log(error);
+				 }
+				 else {
+				     console.log('fichier modifié');
+				 }
+			 res.send(`Thank you`);
+			
+	})
+}});
 app.listen(port, () => {
 	console.log(`Server on on port ${port}`);
 })
