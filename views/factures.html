@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Node JS</title>
+	<title>Facture</title>
 </head>
 <body>
 	<!-- We can add Script de création de factures here. The questions as a form -->
+
+	<form method="post" action="/post.html">
+    le nom du client =<input type="text" name="quel est le nom du client?">
+    la prestation fournie =<input type="text" name="quelle est la prestation fournie?">
+    le coût horaire =<input type="text" name="quel est le coût horaire?">
+    le nombre d'heures =<input type="text" name="quel est le nombre d'heures facturées?">
+    il y'a un TVA à appliquer = <input type="radio" name="TVA"> oui <input type="radio" name="TVA"> non
+   	Si oui le taux de TVA sinon TVA=0 =<input type="text" name="quel est le taux de TVA?">
+    <input type="submit" value="post">
+  </form>
 </body>
 </html>
