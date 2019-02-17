@@ -97,4 +97,26 @@ exports.getClient = function (req, res) {
         res.send(client);
     });
 };
-
+if( req.params.nom_du_client == ""){
+    res.send('erreur : veuillez remplir ....');
+}
+else{
+    
+    client.findOne({ nom : req.params.nom }, (err, client) => {
+        if(err){
+            console.log(err);
+        }
+        else{
+            if(client == null){ 
+                error = true;
+                res.send('client n existe pas');
+            }else{ 
+                const path = `./Notes/${client.nom}/notes.txt`;
+                if(fs.existsSync(path)){ 
+                    fs.unlinkSync(path); 
+                }
+                res.send("Notes File deleted");
+            }
+        }
+    });
+}
