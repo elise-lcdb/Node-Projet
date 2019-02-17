@@ -25,6 +25,7 @@ app.get('/api/v1/clients', ClientController.getClients);
 app.get('/api/v1/clients/:id', ClientController.getClient);
 app.get('/api/v1/clients/remove/:id', ClientController.deleteClient);
 app.put('/api/v1/clients/:id', ClientController.updateClient);
+app.get('/api/v1/clients/CA', ClientController.getCA);
 
 app.get('/api/v1/factures', (req, res) => {
 	res.render('factures.html');

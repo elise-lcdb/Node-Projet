@@ -45,4 +45,13 @@ exports.createFacture = (req, res) => {
 // });
      })
 }
+exports.getCA= (req , res)=>{
+    let CA = 0;
+    Facture.find( (err, Factures) => {
+        factures.forEach( (Facture) =>{
+            CA += Facture.prix_TTC;
+        })
+        res.send(`Le Chiffre d'affaire est: ${CA}`);
+    })
+}
 
