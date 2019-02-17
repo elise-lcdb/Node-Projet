@@ -9,6 +9,7 @@ let FactureSchema = new Schema ({
     nbre_heure:Number,
     prixHT: Number,
    TVA: Number,
+   facturenb: Number,
     
 });
 //Calcul TTC
