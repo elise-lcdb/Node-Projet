@@ -15,7 +15,7 @@ let FactureSchema = new Schema ({
 //Calcul TTC
 FactureSchema.method({
     calculateTaxe: function () {
-        const calcule = this.cout_horaire *  this.nobre_heures;
+        const calcule1 = this.cout_horaire *  this.nobre_heures;
         const calcule = this.prixHT+ (this.prixHT *  this.TVA / 100);
         var text = "Nom du Client : " + this.nom_du_client + " => prix HT : " + this.prixHT + " => taux de TVA : " + this.TVA + " => prix TTC : " + calcule + " (" +new Date() + ")";
 
